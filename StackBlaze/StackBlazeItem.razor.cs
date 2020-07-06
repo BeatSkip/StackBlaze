@@ -50,6 +50,32 @@ namespace StackBlaze
         }
 
         [Parameter]
+        public int initialH
+        {
+            get
+            {
+                return Options.initialH;
+            }
+            set
+            {
+                Options.initialH = value;
+            }
+        }
+
+        [Parameter]
+        public int initialW
+        {
+            get
+            {
+                return Options.initialW;
+            }
+            set
+            {
+                Options.initialW = value;
+            }
+        }
+
+        [Parameter]
         public int initialX
         {
             get
@@ -259,6 +285,8 @@ namespace StackBlaze
             ElementID = "gsitem-" + _id.ToString();
             this.X = initialX;
             this.Y = initialY;
+            this.Width = initialW;
+            this.Height = initialH;
 
             if (this.Params != "")
                 Options = SetFromSerialized(Params);
