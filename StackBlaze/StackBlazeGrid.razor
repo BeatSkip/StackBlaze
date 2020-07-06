@@ -1,0 +1,8 @@
+﻿@using Microsoft.AspNetCore.Components.Rendering
+@inject IJSRuntime JSRuntime
+
+<div class="grid-stack" @ref="Element" id="@_elementid">
+    <CascadingValue Value="this">
+        @ChildContent
+    </CascadingValue>
+</div>

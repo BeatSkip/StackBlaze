@@ -1,0 +1,27 @@
+﻿<Styled>
+    @sselector{
+    background-color: @BackgroundColor;
+    }
+
+</Styled>
+<div class="grid-stack-item"
+     data-gs-x="@X"
+     data-gs-y="@Y"
+     data-gs-width="@Width"
+     data-gs-min-width="@minWidth"
+     data-gs-max-width="@maxWidth"
+     data-gs-height="@Height"
+     data-gs-min-height="@minHeight"
+     data-gs-max-height="@maxHeight"
+     data-gs-id="@_id"
+     data-gs-noMove="@noMove"
+     data-gs-noResize="@noResize"
+     id="@ElementID">
+    <div class="grid-stack-item-content" >
+        @ChildContent
+    </div>
+</div>
+
+@code{
+    private string sselector => "#" + ElementID;
+}
