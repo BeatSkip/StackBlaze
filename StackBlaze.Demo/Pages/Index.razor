@@ -2,25 +2,27 @@
 
 <h1>Hello, world!</h1>
 <button @onclick="addnewitem">Add Tile!</button>
-<StackBlazeGrid @ref="grid">
+
+<StackBlazeGrid>
     <StackBlazeItem initialX=0 BackgroundColor="#f0f0f0">
         Number 1!
     </StackBlazeItem>
+
     <StackBlazeItem initialX=1 BackgroundColor="#f1f1f1">
         Number 2!
     </StackBlazeItem>
 
     @foreach (var item in items)
-
     {
-        <StackBlazeItem BackgroundColor="#f4f4f4">@item
+        <StackBlazeItem BackgroundColor="#f4f4f4">
+            @item
         </StackBlazeItem>
-        }
+    }
+
 </StackBlazeGrid>
 
 
 @code{
-    StackBlazeGrid grid;
 
     int counter = 3;
 
@@ -28,7 +30,7 @@
 
     private async void addnewitem()
     {
-        items.Add(string.Format("Number {0}!",counter));
+        items.Add(string.Format("Number {0}!", counter));
         counter++;
         StateHasChanged();
     }

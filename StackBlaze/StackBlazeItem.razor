@@ -1,7 +1,21 @@
 ﻿<Styled>
-    @sselector{
-    background-color: @BackgroundColor;
+    @selectorItem{
+
+    margin:10px;
     }
+
+    @selectorItem > div{
+    background-color: @BackgroundColor;
+    margin: 5px;
+    }
+
+
+
+    @selectorItem > div.ui-resizable-handle.ui-resizable-se.ui-icon.ui-icon-gripsmall-diagonal-se{
+    background-color: rgba(255, 255, 255, 0.0);
+    }
+
+
 
 </Styled>
 <div class="grid-stack-item"
@@ -17,11 +31,14 @@
      data-gs-noMove="@noMove"
      data-gs-noResize="@noResize"
      id="@ElementID">
-    <div class="grid-stack-item-content" >
+    <div class="grid-stack-item-content">
         @ChildContent
     </div>
 </div>
 
 @code{
-    private string sselector => "#" + ElementID;
+
+    private string selectorItem => "#" + ElementID;
+
+
 }

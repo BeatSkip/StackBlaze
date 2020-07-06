@@ -38,7 +38,7 @@ namespace StackBlaze
         public int CellHeight { get; set; } = 60;
 
         [JsonProperty("verticalMargin")]
-        public int VerticalMargin { get; set; } = 20;
+        public int VerticalMargin { get; set; } = 10;
 
         [JsonProperty("auto")]
         public bool Auto { get; set; } = true;
