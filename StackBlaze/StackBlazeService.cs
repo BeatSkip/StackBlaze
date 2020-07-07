@@ -5,13 +5,14 @@ using System.Text;
 using Microsoft.AspNetCore.Components;
 using Microsoft.Extensions.DependencyInjection;
 using System.Threading.Tasks;
+using System.Globalization;
+using Newtonsoft.Json;
+using Newtonsoft.Json.Converters;
 
 namespace StackBlaze
 {
     public class StackBlazeService
     {
-
-        private Dictionary<int, GridOptions> _GridOptions = new Dictionary<int, GridOptions>();
 
         private Dictionary<string, StackBlazeGrid> grids = new Dictionary<string, StackBlazeGrid>();
 
@@ -56,10 +57,17 @@ namespace StackBlaze
             return _idItemCounter;
         }
 
-        [JSInvokable("EventOnChanged")]
-        public async void EventOnChanged(ItemChangedArgs e)
+        internal StackBlazeInterop GetInteropForGrid(string grid)
         {
-            grids[e.GridId].UpdateItem(e);
+            return grids[grid].GridJS;
+        }
+
+        [JSInvokable("EventOnChanged")]
+        public async void EventOnChanged(string json)
+        {
+            //Console.WriteLine("update event json: ");
+            var args = JsonConvert.DeserializeObject<ItemChangedArgs>(json);
+            grids[args.Gridid].UpdateItem(args);
         }
 
 

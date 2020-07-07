@@ -15,7 +15,7 @@ namespace StackBlaze
         private StackBlazeService StackBlazeService { get; set; }
 
         #region grid
-        private StackBlazeInterop GridJS;
+        internal StackBlazeInterop GridJS { get; set; }
 
         public ElementReference Element { get; set; }
 
@@ -69,21 +69,21 @@ namespace StackBlaze
 
         internal void RegisterItem(StackBlazeItem item)
         {
-            Console.WriteLine("[c#] registering item with id: {0}", item.ID);
+            //Console.WriteLine("[c#] registering item with id: {0}", item.ID);
             Items.Add(item.ID, item);
-            
         }
 
         internal async Task MakeItem(StackBlazeItem item)
         {
             await GridJS.RegisterItem(item.ElementID);
+            item.Options.grid = this;
             await Refresh();
         }
 
         internal async void UpdateItem(ItemChangedArgs e)
         {
             Items[e.Id].UpdateValues(e);
-            Console.WriteLine("[cs] updated item!");
+            //Console.WriteLine("[cs] updated item!");
             await Refresh();
         }
 
@@ -97,12 +97,21 @@ namespace StackBlaze
             return initialized;
         }
 
+       
         #endregion
+
+
 
         #region GridStack API
         public async Task<int> CellHeight()
         {
             var h = await GridJS.CellHeight();
+            return h;
+        }
+
+        public async Task<int> CellHeight(int newHeight, bool noUpdate = false)
+        {
+            var h = await GridJS.CellHeight(newHeight, noUpdate);
             return h;
         }
 

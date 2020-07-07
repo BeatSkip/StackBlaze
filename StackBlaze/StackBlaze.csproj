@@ -1,8 +1,21 @@
-<Project Sdk="Microsoft.NET.Sdk.Razor">
+﻿<Project Sdk="Microsoft.NET.Sdk.Razor">
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
     <RazorLangVersion>3.0</RazorLangVersion>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <Version>0.1-Alpha</Version>
+    <Authors>Oscar Spierings</Authors>
+    <Description>A Gridstack.JS based Blazor Webassemby component</Description>
+    <PackageProjectUrl>https://github.com/BeatSkip/StackBlaze</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/BeatSkip/StackBlaze</RepositoryUrl>
+    <RepositoryType>Github</RepositoryType>
+    <PackageTags>Blazor Gridstack JS Webassembly Dashboard</PackageTags>
+    <PackageReleaseNotes>pre-alpha</PackageReleaseNotes>
+    <PackageLicenseExpression></PackageLicenseExpression>
+    <Copyright>Oscar Spierings</Copyright>
+    <AssemblyVersion>0.1.1</AssemblyVersion>
+    <FileVersion>1</FileVersion>
   </PropertyGroup>
 
 

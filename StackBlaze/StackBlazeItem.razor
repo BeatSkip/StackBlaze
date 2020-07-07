@@ -1,44 +1,18 @@
-﻿<Styled>
-    @selectorItem{
-
-    margin:10px;
-    }
-
-    @selectorItem > div{
-    background-color: @BackgroundColor;
-    margin: 5px;
-    }
-
-
-
-    @selectorItem > div.ui-resizable-handle.ui-resizable-se.ui-icon.ui-icon-gripsmall-diagonal-se{
-    background-color: rgba(255, 255, 255, 0.0);
-    }
-
-
-
-</Styled>
+﻿
 <div class="grid-stack-item"
-     data-gs-x="@X"
-     data-gs-y="@Y"
-     data-gs-width="@Width"
-     data-gs-min-width="@minWidth"
-     data-gs-max-width="@maxWidth"
-     data-gs-height="@Height"
-     data-gs-min-height="@minHeight"
-     data-gs-max-height="@maxHeight"
-     data-gs-id="@_id"
-     data-gs-noMove="@noMove"
-     data-gs-noResize="@noResize"
-     id="@ElementID">
-    <div class="grid-stack-item-content">
+     data-gs-x="@Options.X"
+     data-gs-y="@Options.Y"
+     data-gs-width="@Options.Width"
+     data-gs-min-width="@Options.minWidth"
+     data-gs-max-width="@Options.maxWidth"
+     data-gs-height="@Options.Height"
+     data-gs-min-height="@Options.minHeight"
+     data-gs-max-height="@Options.maxHeight"
+     data-gs-id="@Options.ID"
+     data-gs-noMove="@Options.noMove"
+     data-gs-noResize="@Options.noResize"
+     id="@Options.ElementID">
+    <div class="grid-stack-item-content" id="@ContentID">
         @ChildContent
     </div>
 </div>
-
-@code{
-
-    private string selectorItem => "#" + ElementID;
-
-
-}
