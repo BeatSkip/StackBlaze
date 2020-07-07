@@ -1,3 +1,4 @@
+
 # StackBlaze
 A Gridstack.JS powered Drag-and-Drop component to make beautiful Drag and drop dashboards in blazor
 This is a very very pre-alpha version. I'm making this component for a company project, so the polishing will come.
@@ -31,23 +32,80 @@ public static async Task Main(string[] args)
 
 ```html
 <StackBlazeGrid>
-    <StackBlazeItem BackgroundColor="#f0f0f0">
+    <StackBlazeItem>
         Number 1!
     </StackBlazeItem>
 
-    <StackBlazeItem BackgroundColor="#f1f1f1">
+    <StackBlazeItem>
         Number 2!
     </StackBlazeItem>
 
     @foreach (var item in items)
     {
-        <StackBlazeItem BackgroundColor="#f4f4f4">
-            @item
+        <StackBlazeItem Options=@item.options>
+            @item.value
         </StackBlazeItem>
     }
 </StackBlazeGrid>
 ```
 
-if you need to debug, look at the git demo/ examples for non min includes.
+
+## Implemented:
+
+#### Functionality:
+- [x] Basic Functionality (drag and drop grid)
+- [x] JS <-> Blazor connection
+
+#### Item Options
+
+#### Grid Events:
+ - [ ] added(event, items)
+ - [x] change(event, items)
+ - [ ] disable(event)
+ - [ ] dragstart(event, ui)
+ - [ ] dragstop(event, ui)
+ - [ ] dropped(event, previousWidget, newWidget)
+ - [ ] enable(event)
+ - [ ] removed(event, items)
+ - [ ] resizestart(event, ui)
+ - [ ] gsresizestop(event, ui)
+ 
+#### Grid API:
+ - [ ] addWidget(el, [options])
+ - [ ] addWidget(el, [x, y, width, height, autoPosition, minWidth, maxWidth, minHeight, maxHeight, id])
+ - [ ] batchUpdate()
+ - [ ] compact()
+ - [x] cellHeight()
+ - [ ] cellHeight(val, noUpdate)
+ - [x] cellWidth()
+ - [ ] commit()
+ - [ ] column(column, doNotPropagate)
+ - [ ] destroy([detachGrid])
+ - [x] disable()
+ - [x] enable()
+ - [ ] enableMove(doEnable, includeNewWidgets)
+ - [ ] enableResize(doEnable, includeNewWidgets)
+ - [ ] float(val?)
+ - [ ] getCellFromPixel(position[, useOffset])
+ - [x] isAreaEmpty(x, y, width, height)
+ - [x] locked(el, val)
+ - [ ] makeWidget(el)
+ - [ ] maxHeight(el, val)
+ - [ ] minHeight(el, val)
+ - [ ] maxWidth(el, val)
+ - [ ] minWidth(el, val)
+ - [ ] movable(el, val)
+ - [ ] move(el, x, y)
+ - [ ] removeWidget(el[, detachNode])
+ - [ ] removeAll([detachNode])
+ - [ ] resize(el, width, height)
+ - [ ] resizable(el, val)
+ - [ ] setAnimation(doAnimate)
+ - [ ] setStatic(staticValue)
+ - [x] update(el, x, y, width, height)
+ - [ ] verticalMargin()
+ - [ ] verticalMargin(value, noUpdate)
+ - [ ] willItFit(x, y, width, height, autoPosition)
+
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
