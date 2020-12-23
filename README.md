@@ -1,3 +1,7 @@
+Important! This was just a proof-of-principle a while back. 
+I am currently working on a new version that is actually good. 
+And working with the newer standards in .net 5.0!! 
+Please be patient if you like the idea :) 
 
 # StackBlaze
 A Gridstack.JS powered Drag-and-Drop component to make beautiful Drag and drop dashboards in blazor
