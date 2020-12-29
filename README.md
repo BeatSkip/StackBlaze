@@ -1,7 +1,11 @@
 Important! This was just a proof-of-principle a while back. 
-I am currently working on a new version that is actually good. 
-And working with the newer standards in .net 5.0!! 
-Please be patient if you like the idea :) 
+I was working on a complete rewrite with JS isolation and other features from .net 5.0
+but i got my personal project currently working by using Excubo-ag's project.
+
+https://github.com/excubo-ag/Blazor.Grids
+
+please do contribute and fork if this suits your needs better. but for now i won't have time updating this.
+i might later on still rework this, as the possibilities are greater if implemented properly.
 
 # StackBlaze
 A Gridstack.JS powered Drag-and-Drop component to make beautiful Drag and drop dashboards in blazor
